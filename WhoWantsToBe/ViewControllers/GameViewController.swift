@@ -17,30 +17,6 @@ class GameViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
-//        if let someString = sender.titleLabel?.text {
-//            if someString == questions[Game.shared.session!.questions-1].rightAnswer {
-//                Game.shared.session!.rightAnswers += 1
-//                Game.shared.session!.questions += 1
-//
-//                self.gameDelegate?.refreshGameInfo(currentQuestion: Game.shared.session!.questions, rightAnswers: Game.shared.session!.rightAnswers)
-//
-//                if Game.shared.session!.questions == 16 {
-//                    Game.shared.session!.questions -= 1
-//                    Game.shared.getResult()
-//                    Game.shared.session = nil
-//                    self.performSegue(withIdentifier: "unwindToMain", sender: self)
-//                    print(Game.shared.results)
-//                } else {
-//                    chooseQuestion()
-//                }
-//            } else {
-//                Game.shared.getResult()
-//                Game.shared.session = nil
-//                self.performSegue(withIdentifier: "unwindToMain", sender: self)
-//                print(Game.shared.results)
-//            }
-//        }
-        
         if let someString = sender.titleLabel?.text {
             if someString == questions[Game.shared.session!.questions-1].rightAnswer {
                 
