@@ -12,13 +12,15 @@ class GameSession: GameDelegate {
     func refreshGameInfo(isRightAnswer: Bool) {
         if isRightAnswer {
             self.questions += 1
-            self.rightAnswers += 1
+            self.rightAnswers.value += 1
         }
     }
     
     var questions: Int = 1
-    var rightAnswers: Int = 0
+    var rightAnswers: Observable<Int>
     
-
+    init() {
+        self.rightAnswers = Observable(0)
+    }
 }
 
