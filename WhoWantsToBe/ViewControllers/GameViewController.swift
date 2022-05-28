@@ -17,12 +17,46 @@ class GameViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
+//        if let someString = sender.titleLabel?.text {
+//            if someString == questions[Game.shared.session!.questions-1].rightAnswer {
+//                Game.shared.session!.rightAnswers += 1
+//                Game.shared.session!.questions += 1
+//
+//                self.gameDelegate?.refreshGameInfo(currentQuestion: Game.shared.session!.questions, rightAnswers: Game.shared.session!.rightAnswers)
+//
+//                if Game.shared.session!.questions == 16 {
+//                    Game.shared.session!.questions -= 1
+//                    Game.shared.getResult()
+//                    Game.shared.session = nil
+//                    self.performSegue(withIdentifier: "unwindToMain", sender: self)
+//                    print(Game.shared.results)
+//                } else {
+//                    chooseQuestion()
+//                }
+//            } else {
+//                Game.shared.getResult()
+//                Game.shared.session = nil
+//                self.performSegue(withIdentifier: "unwindToMain", sender: self)
+//                print(Game.shared.results)
+//            }
+//        }
+        
         if let someString = sender.titleLabel?.text {
-            if someString == questions[Game.shared.session!.questions].rightAnswer {
-                Game.shared.session!.rightAnswers += 1
-                Game.shared.session!.questions += 1
-                chooseQuestion()
+            if someString == questions[Game.shared.session!.questions-1].rightAnswer {
+                
+                self.gameDelegate?.refreshGameInfo(isRightAnswer: true)
+                
+                if Game.shared.session!.questions == 16 {
+                    Game.shared.session!.questions -= 1
+                    Game.shared.getResult()
+                    Game.shared.session = nil
+                    self.performSegue(withIdentifier: "unwindToMain", sender: self)
+                    print(Game.shared.results)
+                } else {
+                    chooseQuestion()
+                }
             } else {
+                self.gameDelegate?.refreshGameInfo(isRightAnswer: false)
                 Game.shared.getResult()
                 Game.shared.session = nil
                 self.performSegue(withIdentifier: "unwindToMain", sender: self)
@@ -31,6 +65,7 @@ class GameViewController: UIViewController {
         }
     }
 
+    weak var gameDelegate: GameDelegate?
     private let questions: [Question] = [
         Question(
             question: "Что растёт в огороде?",
@@ -111,14 +146,19 @@ class GameViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.gameDelegate = Game.shared.session
         chooseQuestion()
     }
 
     private func chooseQuestion() {
-        questionLabel.text = questions[Game.shared.session!.questions].question
-        firstAnswerButton.setTitle(questions[Game.shared.session!.questions].answers[0], for: .normal)
-        secondAnswerButton.setTitle(questions[Game.shared.session!.questions].answers[1], for: .normal)
-        thirdAnswerButton.setTitle(questions[Game.shared.session!.questions].answers[2], for: .normal)
-        fourthAnswerButton.setTitle(questions[Game.shared.session!.questions].answers[3], for: .normal)
+        questionLabel.text = questions[Game.shared.session!.questions-1].question
+        firstAnswerButton.setTitle(questions[Game.shared.session!.questions-1].answers[0], for: .normal)
+        secondAnswerButton.setTitle(questions[Game.shared.session!.questions-1].answers[1], for: .normal)
+        thirdAnswerButton.setTitle(questions[Game.shared.session!.questions-1].answers[2], for: .normal)
+        fourthAnswerButton.setTitle(questions[Game.shared.session!.questions-1].answers[3], for: .normal)
     }
+}
+
+protocol GameDelegate: AnyObject {
+    func refreshGameInfo(isRightAnswer: Bool)
 }

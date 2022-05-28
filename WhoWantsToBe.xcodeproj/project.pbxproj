@@ -17,6 +17,7 @@
 		84DC21322841506100A3F4EB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC21312841506100A3F4EB /* Game.swift */; };
 		84DC21342841507100A3F4EB /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC21332841507100A3F4EB /* GameSession.swift */; };
 		84DC21362841507E00A3F4EB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC21352841507E00A3F4EB /* Question.swift */; };
+		84DC21392841ED1700A3F4EB /* ResultsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC21382841ED1700A3F4EB /* ResultsCaretaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		84DC21312841506100A3F4EB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		84DC21332841507100A3F4EB /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		84DC21352841507E00A3F4EB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		84DC21382841ED1700A3F4EB /* ResultsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCaretaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		84DC210D284148AE00A3F4EB /* WhoWantsToBe */ = {
 			isa = PBXGroup;
 			children = (
+				84DC21372841ECF900A3F4EB /* Utils */,
 				84DC21302841503B00A3F4EB /* Model */,
 				84DC2125284149E100A3F4EB /* View */,
 				84DC2126284149F600A3F4EB /* ViewControllers */,
@@ -101,6 +104,14 @@
 				84DC21352841507E00A3F4EB /* Question.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84DC21372841ECF900A3F4EB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84DC21382841ED1700A3F4EB /* ResultsCaretaker.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 				84DC212D28414D7B00A3F4EB /* MainViewController.swift in Sources */,
 				84DC212A28414BC300A3F4EB /* AppDelegate.swift in Sources */,
 				84DC21342841507100A3F4EB /* GameSession.swift in Sources */,
+				84DC21392841ED1700A3F4EB /* ResultsCaretaker.swift in Sources */,
 				84DC21362841507E00A3F4EB /* Question.swift in Sources */,
 				84DC212B28414BC300A3F4EB /* SceneDelegate.swift in Sources */,
 			);

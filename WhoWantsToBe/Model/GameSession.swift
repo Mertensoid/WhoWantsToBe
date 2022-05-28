@@ -7,8 +7,18 @@
 
 import Foundation
 
-class GameSession {
-    var questions: Int = 0
+class GameSession: GameDelegate {
+    
+    func refreshGameInfo(isRightAnswer: Bool) {
+        if isRightAnswer {
+            self.questions += 1
+            self.rightAnswers += 1
+        }
+    }
+    
+    var questions: Int = 1
     var rightAnswers: Int = 0
+    
+
 }
 
