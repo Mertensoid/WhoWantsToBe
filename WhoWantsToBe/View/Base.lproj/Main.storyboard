@@ -169,7 +169,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="SXY-NJ-C1u">
-                                <rect key="frame" x="20" y="300.5" width="374" height="305.5"/>
+                                <rect key="frame" x="20" y="278" width="374" height="350.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите вопрос:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D6-8g-aLg">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -246,8 +246,28 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYC-En-6L7">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fWj-WP-7as">
                                         <rect key="frame" x="0.0" y="274.5" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Верный ответ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-QC-OJM">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n86-aO-Psg">
+                                                <rect key="frame" x="124.5" y="0.0" width="249.5" height="32"/>
+                                                <segments>
+                                                    <segment title="A"/>
+                                                    <segment title="B"/>
+                                                    <segment title="C"/>
+                                                    <segment title="D"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYC-En-6L7">
+                                        <rect key="frame" x="0.0" y="319.5" width="374" height="31"/>
                                         <color key="backgroundColor" red="0.69481145070000006" green="0.86078917980000003" blue="0.4833568251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Сохранить"/>
@@ -272,6 +292,7 @@
                         <outlet property="firstAnswerTextLabel" destination="Jbs-g1-XjG" id="nDf-pa-4EA"/>
                         <outlet property="fourthAnswerTextLabel" destination="FHf-ch-k1J" id="CIw-kH-WDo"/>
                         <outlet property="questionTextField" destination="PFd-4X-RKf" id="F5z-jh-CW0"/>
+                        <outlet property="rightAnswerControl" destination="n86-aO-Psg" id="ZBP-Mx-kug"/>
                         <outlet property="secondAnswerTextLabel" destination="tAO-SI-GpG" id="ld0-bA-IxV"/>
                         <outlet property="thirdAnswerTextLabel" destination="XPL-c6-4RM" id="FhX-Yr-qHq"/>
                         <segue destination="bQE-QB-az4" kind="unwind" identifier="unwindToMain" animates="NO" unwindAction="unwindActionWithUnwindSegue:" id="ZzD-pJ-Ege"/>

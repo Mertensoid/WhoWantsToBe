@@ -23,7 +23,7 @@ class GameViewController: UIViewController {
                 
                 self.gameDelegate?.refreshGameInfo(isRightAnswer: true)
                 
-                if Game.shared.session!.questions == 16 {
+                if Game.shared.session!.questions == questions.count+1 {
                     Game.shared.session!.questions -= 1
                     Game.shared.getResult()
                     Game.shared.session = nil
