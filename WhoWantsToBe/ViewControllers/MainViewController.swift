@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "startGame" else { return }
-        print("1")
         Game.shared.session = GameSession()
         
     }

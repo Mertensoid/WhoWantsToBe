@@ -12,6 +12,10 @@ struct Result: Codable {
     let date: String
 }
 
+enum Difficulty {
+    case easy, hard
+}
+
 class Game {
     static let shared = Game()
     
@@ -23,6 +27,7 @@ class Game {
             resultsCaretaker.save(results: results)
         }
     }
+    var difficulty: Difficulty = .easy
     
     private init() {
         results = resultsCaretaker.load()
@@ -30,7 +35,7 @@ class Game {
     
     func getResult() {
         if let currentSession = session {
-            var result = Double(currentSession.rightAnswers) / Double(currentSession.questions)
+            var result = Double(currentSession.rightAnswers.value) / Double(currentSession.questions)
             result = result * 100
             let intResult = Double(Int(result)) / 100
             let formatter = DateFormatter()
